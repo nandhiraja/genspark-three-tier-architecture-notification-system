@@ -1,0 +1,11 @@
+/Users/nandhiraja/Presidio-Internship/gitSpace/genspark-three-tier-architecture-notification-system/NotificationSystemApplication.Core/bin/Debug/net10.0/NotificationSystemApplication.Core.deps.json
+/Users/nandhiraja/Presidio-Internship/gitSpace/genspark-three-tier-architecture-notification-system/NotificationSystemApplication.Core/bin/Debug/net10.0/NotificationSystemApplication.Core.dll
+/Users/nandhiraja/Presidio-Internship/gitSpace/genspark-three-tier-architecture-notification-system/NotificationSystemApplication.Core/bin/Debug/net10.0/NotificationSystemApplication.Core.pdb
+/Users/nandhiraja/Presidio-Internship/gitSpace/genspark-three-tier-architecture-notification-system/NotificationSystemApplication.Core/obj/Debug/net10.0/NotificationSystemApplication.Core.GeneratedMSBuildEditorConfig.editorconfig
+/Users/nandhiraja/Presidio-Internship/gitSpace/genspark-three-tier-architecture-notification-system/NotificationSystemApplication.Core/obj/Debug/net10.0/NotificationSystemApplication.Core.AssemblyInfoInputs.cache
+/Users/nandhiraja/Presidio-Internship/gitSpace/genspark-three-tier-architecture-notification-system/NotificationSystemApplication.Core/obj/Debug/net10.0/NotificationSystemApplication.Core.AssemblyInfo.cs
+/Users/nandhiraja/Presidio-Internship/gitSpace/genspark-three-tier-architecture-notification-system/NotificationSystemApplication.Core/obj/Debug/net10.0/NotificationSystemApplication.Core.csproj.CoreCompileInputs.cache
+/Users/nandhiraja/Presidio-Internship/gitSpace/genspark-three-tier-architecture-notification-system/NotificationSystemApplication.Core/obj/Debug/net10.0/NotificationSystemApplication.Core.dll
+/Users/nandhiraja/Presidio-Internship/gitSpace/genspark-three-tier-architecture-notification-system/NotificationSystemApplication.Core/obj/Debug/net10.0/refint/NotificationSystemApplication.Core.dll
+/Users/nandhiraja/Presidio-Internship/gitSpace/genspark-three-tier-architecture-notification-system/NotificationSystemApplication.Core/obj/Debug/net10.0/NotificationSystemApplication.Core.pdb
+/Users/nandhiraja/Presidio-Internship/gitSpace/genspark-three-tier-architecture-notification-system/NotificationSystemApplication.Core/obj/Debug/net10.0/ref/NotificationSystemApplication.Core.dll
