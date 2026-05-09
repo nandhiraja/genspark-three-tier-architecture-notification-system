@@ -1,0 +1,17 @@
+/Users/nandhiraja/Presidio-Internship/gitSpace/genspark-three-tier-architecture-notification-system/NotificationSystemApplication.BLL/bin/Debug/net10.0/NotificationSystemApplication.BLL.deps.json
+/Users/nandhiraja/Presidio-Internship/gitSpace/genspark-three-tier-architecture-notification-system/NotificationSystemApplication.BLL/bin/Debug/net10.0/NotificationSystemApplication.BLL.dll
+/Users/nandhiraja/Presidio-Internship/gitSpace/genspark-three-tier-architecture-notification-system/NotificationSystemApplication.BLL/bin/Debug/net10.0/NotificationSystemApplication.BLL.pdb
+/Users/nandhiraja/Presidio-Internship/gitSpace/genspark-three-tier-architecture-notification-system/NotificationSystemApplication.BLL/bin/Debug/net10.0/NotificationSystemApplication.Core.dll
+/Users/nandhiraja/Presidio-Internship/gitSpace/genspark-three-tier-architecture-notification-system/NotificationSystemApplication.BLL/bin/Debug/net10.0/NotificationSystemApplication.DAL.dll
+/Users/nandhiraja/Presidio-Internship/gitSpace/genspark-three-tier-architecture-notification-system/NotificationSystemApplication.BLL/bin/Debug/net10.0/NotificationSystemApplication.DAL.pdb
+/Users/nandhiraja/Presidio-Internship/gitSpace/genspark-three-tier-architecture-notification-system/NotificationSystemApplication.BLL/bin/Debug/net10.0/NotificationSystemApplication.Core.pdb
+/Users/nandhiraja/Presidio-Internship/gitSpace/genspark-three-tier-architecture-notification-system/NotificationSystemApplication.BLL/obj/Debug/net10.0/NotificationSystemApplication.BLL.csproj.AssemblyReference.cache
+/Users/nandhiraja/Presidio-Internship/gitSpace/genspark-three-tier-architecture-notification-system/NotificationSystemApplication.BLL/obj/Debug/net10.0/NotificationSystemApplication.BLL.GeneratedMSBuildEditorConfig.editorconfig
+/Users/nandhiraja/Presidio-Internship/gitSpace/genspark-three-tier-architecture-notification-system/NotificationSystemApplication.BLL/obj/Debug/net10.0/NotificationSystemApplication.BLL.AssemblyInfoInputs.cache
+/Users/nandhiraja/Presidio-Internship/gitSpace/genspark-three-tier-architecture-notification-system/NotificationSystemApplication.BLL/obj/Debug/net10.0/NotificationSystemApplication.BLL.AssemblyInfo.cs
+/Users/nandhiraja/Presidio-Internship/gitSpace/genspark-three-tier-architecture-notification-system/NotificationSystemApplication.BLL/obj/Debug/net10.0/NotificationSystemApplication.BLL.csproj.CoreCompileInputs.cache
+/Users/nandhiraja/Presidio-Internship/gitSpace/genspark-three-tier-architecture-notification-system/NotificationSystemApplication.BLL/obj/Debug/net10.0/Notifica.4C88C564.Up2Date
+/Users/nandhiraja/Presidio-Internship/gitSpace/genspark-three-tier-architecture-notification-system/NotificationSystemApplication.BLL/obj/Debug/net10.0/NotificationSystemApplication.BLL.dll
+/Users/nandhiraja/Presidio-Internship/gitSpace/genspark-three-tier-architecture-notification-system/NotificationSystemApplication.BLL/obj/Debug/net10.0/refint/NotificationSystemApplication.BLL.dll
+/Users/nandhiraja/Presidio-Internship/gitSpace/genspark-three-tier-architecture-notification-system/NotificationSystemApplication.BLL/obj/Debug/net10.0/NotificationSystemApplication.BLL.pdb
+/Users/nandhiraja/Presidio-Internship/gitSpace/genspark-three-tier-architecture-notification-system/NotificationSystemApplication.BLL/obj/Debug/net10.0/ref/NotificationSystemApplication.BLL.dll
