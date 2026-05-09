@@ -1,0 +1,15 @@
+/Users/nandhiraja/Presidio-Internship/gitSpace/genspark-three-tier-architecture-notification-system/NotificationSystemApplication.DAL/bin/Debug/net10.0/NotificationSystemApplication.DAL.deps.json
+/Users/nandhiraja/Presidio-Internship/gitSpace/genspark-three-tier-architecture-notification-system/NotificationSystemApplication.DAL/bin/Debug/net10.0/NotificationSystemApplication.DAL.dll
+/Users/nandhiraja/Presidio-Internship/gitSpace/genspark-three-tier-architecture-notification-system/NotificationSystemApplication.DAL/bin/Debug/net10.0/NotificationSystemApplication.DAL.pdb
+/Users/nandhiraja/Presidio-Internship/gitSpace/genspark-three-tier-architecture-notification-system/NotificationSystemApplication.DAL/bin/Debug/net10.0/NotificationSystemApplication.Core.dll
+/Users/nandhiraja/Presidio-Internship/gitSpace/genspark-three-tier-architecture-notification-system/NotificationSystemApplication.DAL/bin/Debug/net10.0/NotificationSystemApplication.Core.pdb
+/Users/nandhiraja/Presidio-Internship/gitSpace/genspark-three-tier-architecture-notification-system/NotificationSystemApplication.DAL/obj/Debug/net10.0/NotificationSystemApplication.DAL.csproj.AssemblyReference.cache
+/Users/nandhiraja/Presidio-Internship/gitSpace/genspark-three-tier-architecture-notification-system/NotificationSystemApplication.DAL/obj/Debug/net10.0/NotificationSystemApplication.DAL.GeneratedMSBuildEditorConfig.editorconfig
+/Users/nandhiraja/Presidio-Internship/gitSpace/genspark-three-tier-architecture-notification-system/NotificationSystemApplication.DAL/obj/Debug/net10.0/NotificationSystemApplication.DAL.AssemblyInfoInputs.cache
+/Users/nandhiraja/Presidio-Internship/gitSpace/genspark-three-tier-architecture-notification-system/NotificationSystemApplication.DAL/obj/Debug/net10.0/NotificationSystemApplication.DAL.AssemblyInfo.cs
+/Users/nandhiraja/Presidio-Internship/gitSpace/genspark-three-tier-architecture-notification-system/NotificationSystemApplication.DAL/obj/Debug/net10.0/NotificationSystemApplication.DAL.csproj.CoreCompileInputs.cache
+/Users/nandhiraja/Presidio-Internship/gitSpace/genspark-three-tier-architecture-notification-system/NotificationSystemApplication.DAL/obj/Debug/net10.0/Notifica.EABC06AE.Up2Date
+/Users/nandhiraja/Presidio-Internship/gitSpace/genspark-three-tier-architecture-notification-system/NotificationSystemApplication.DAL/obj/Debug/net10.0/NotificationSystemApplication.DAL.dll
+/Users/nandhiraja/Presidio-Internship/gitSpace/genspark-three-tier-architecture-notification-system/NotificationSystemApplication.DAL/obj/Debug/net10.0/refint/NotificationSystemApplication.DAL.dll
+/Users/nandhiraja/Presidio-Internship/gitSpace/genspark-three-tier-architecture-notification-system/NotificationSystemApplication.DAL/obj/Debug/net10.0/NotificationSystemApplication.DAL.pdb
+/Users/nandhiraja/Presidio-Internship/gitSpace/genspark-three-tier-architecture-notification-system/NotificationSystemApplication.DAL/obj/Debug/net10.0/ref/NotificationSystemApplication.DAL.dll
