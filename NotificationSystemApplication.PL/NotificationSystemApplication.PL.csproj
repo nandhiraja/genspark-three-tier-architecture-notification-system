@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <ProjectReference Include="..\NotificationSystemApplication.Core\NotificationSystemApplication.Core.csproj" />
+    <ProjectReference Include="..\NotificationSystemApplication.BLL\NotificationSystemApplication.BLL.csproj" />
+    <ProjectReference Include="..\NotificationSystemApplication.DAL\NotificationSystemApplication.DAL.csproj" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+</Project>

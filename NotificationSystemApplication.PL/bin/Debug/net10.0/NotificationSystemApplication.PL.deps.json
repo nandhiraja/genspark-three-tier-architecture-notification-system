@@ -1,0 +1,74 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v10.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v10.0": {
+      "NotificationSystemApplication.PL/1.0.0": {
+        "dependencies": {
+          "NotificationSystemApplication.BLL": "1.0.0",
+          "NotificationSystemApplication.Core": "1.0.0",
+          "NotificationSystemApplication.DAL": "1.0.0"
+        },
+        "runtime": {
+          "NotificationSystemApplication.PL.dll": {}
+        }
+      },
+      "NotificationSystemApplication.BLL/1.0.0": {
+        "dependencies": {
+          "NotificationSystemApplication.Core": "1.0.0",
+          "NotificationSystemApplication.DAL": "1.0.0"
+        },
+        "runtime": {
+          "NotificationSystemApplication.BLL.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "NotificationSystemApplication.Core/1.0.0": {
+        "runtime": {
+          "NotificationSystemApplication.Core.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "NotificationSystemApplication.DAL/1.0.0": {
+        "dependencies": {
+          "NotificationSystemApplication.Core": "1.0.0"
+        },
+        "runtime": {
+          "NotificationSystemApplication.DAL.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "NotificationSystemApplication.PL/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "NotificationSystemApplication.BLL/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "NotificationSystemApplication.Core/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "NotificationSystemApplication.DAL/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
