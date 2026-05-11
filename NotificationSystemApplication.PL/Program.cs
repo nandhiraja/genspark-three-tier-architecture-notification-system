@@ -1,5 +1,4 @@
 using System.Xml;
-using NotificationSystemApplication.DAL.Repositories;
 using NotificationSystemApplication.BLL.Senders;
 using NotificationSystemApplication.BLL.Services;
 using NotificationSystemApplication.Core.Models;
@@ -15,17 +14,10 @@ namespace NotificationSystemApplication.PL
         MessageService _messageService;
 
         public Program()
-        {
-            var userRepository = new UserRepository();
-            var messageRepository = new MessageRepository();
-            var emailSender = new EmailNotificationSender(userRepository);
-            var smsSender = new SMSNotificationSender(userRepository);
-            var notificationFactory = new NotificationFactory(emailSender, smsSender);
-            
-            
+        {   
             _messageService = new MessageService();
-            _userService = new UserService(userRepository);
-            _notificationService = new NotificationService(userRepository, messageRepository, notificationFactory,_userService);
+            _userService = new UserService();
+            _notificationService = new NotificationService();
         }
 
         void Run()
