@@ -12,12 +12,12 @@ namespace NotificationSystemApplication.BLL.Services
     /// </summary>
     public class UserService
     {   
-        private IUserRepository _userRepository;
+        private IUserRepository _userRepository ;
         static string _userId = "0";
 
-        public UserService(IUserRepository userRepository)
+        public UserService()
         {
-            _userRepository = userRepository;
+            _userRepository = new UserRepository();;
         }
 
         public User CreateUserProfile(string userName,string userEmail,string userPhoneNo)

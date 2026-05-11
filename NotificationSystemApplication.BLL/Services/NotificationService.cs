@@ -21,12 +21,14 @@ namespace NotificationSystemApplication.BLL.Services
         /// <summary>
         /// Constructor injection to decouple concrete classes.
         /// </summary>
-        public NotificationService(IUserRepository userRepository, IMessageRepository messageRepository, NotificationFactory factory,UserService userService)
-        {
-            _userRepository = userRepository;
-            _messageRepository = messageRepository;
-            _notificationFactory = factory;
-            _userService = userService;
+        public NotificationService()
+        {   
+            _userRepository =  new UserRepository();
+            _messageRepository = new MessageRepository();
+            var _emailSender = new EmailNotificationSender(_userRepository);
+            var  _smsSender = new SMSNotificationSender(_userRepository);
+            _notificationFactory = new NotificationFactory(_emailSender,_smsSender);
+            _userService = new UserService();
         }
 
         /// <summary>
