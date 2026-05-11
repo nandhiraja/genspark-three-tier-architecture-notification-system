@@ -20,6 +20,14 @@ namespace NotificationSystemApplication.BLL.Services
             _userRepository = new UserRepository();;
         }
 
+/// <summary>
+/// This function helps to create a new user 
+/// </summary>
+/// <param name="userName"></param>
+/// <param name="userEmail"></param>
+/// <param name="userPhoneNo"></param>
+/// <returns>User</returns>
+/// <exception cref="InvalidUserInputException"></exception>
         public User CreateUserProfile(string userName,string userEmail,string userPhoneNo)
         {   
             string id = _GenerateUserId();
@@ -45,6 +53,13 @@ namespace NotificationSystemApplication.BLL.Services
             
         }
 
+/// <summary>
+/// This function is used to edit the existing user
+/// </summary>
+/// <param name="user"></param>
+/// <param name="name"></param>
+/// <returns></returns>
+/// <exception cref="InvalidUserInputException"></exception>
         public User EditUserName(User user ,string name)
         {
             if (name != "")
@@ -60,7 +75,7 @@ namespace NotificationSystemApplication.BLL.Services
             {
                 if (_validateUserphoneNo(PhoneNo))
                 {
-                    user.Email = PhoneNo;
+                    user.PhoneNumber = PhoneNo;
                     return user;
                 }
                 return user;
@@ -109,6 +124,12 @@ namespace NotificationSystemApplication.BLL.Services
         }
 
 
+/// <summary>
+/// It is used to validate the user Email format
+/// </summary>
+/// <param name="email"></param>
+/// <returns>bool</returns>
+/// <exception cref="InvalidUserInputException"></exception>
         private bool _validateUserEmail(string email)
         {
             string pattern = @"^[^@\s]+@[^@\s]+\.[^@\s]+$";
@@ -117,6 +138,13 @@ namespace NotificationSystemApplication.BLL.Services
             throw new InvalidUserInputException("Invalid User email type, example email: examle@samlpe.com"); 
             
         }
+
+/// <summary>
+/// Vlaidate the user PhoneNo as per standard
+/// </summary>
+/// <param name="PhoneNumber"></param>
+/// <returns>bool</returns>
+/// <exception cref="InvalidUserInputException"></exception>
         private bool _validateUserphoneNo(string PhoneNo)
         {
             string phoneNoPattern = @"[0-9]";
@@ -125,7 +153,12 @@ namespace NotificationSystemApplication.BLL.Services
             throw new InvalidUserInputException("Invalid User phoneNo type, example PhoneNo: 0987654321"); 
 
         }
-
+/// <summary>
+/// This function user to get the user form df if exist
+/// </summary>
+/// <param name="loginEmail"></param>
+/// <returns>User</returns>
+/// <exception cref="UserNotFoundException"></exception>
         public User GetUser(string loginEmail)
         {   
             User? loginUser = _userRepository.FindUserByEmail(loginEmail);
@@ -137,6 +170,9 @@ namespace NotificationSystemApplication.BLL.Services
             throw new UserNotFoundException($"Unable to find user, Entered email id {loginEmail}");
             }
 
+/// <summary>
+/// this function used to reduce the user id count incase of no user created
+/// </summary>
         private void _reduceUserIdCount()
         {
             long previousId = Convert.ToInt64(_userId);
