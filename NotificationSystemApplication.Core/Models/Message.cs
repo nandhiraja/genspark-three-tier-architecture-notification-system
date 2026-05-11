@@ -16,7 +16,6 @@ namespace NotificationSystemApplication.Core.Models
 
         public Message()
         {
-            Date = DateTime.UtcNow;
         }
         public Message(string   messageId, string senderId, string receiverId, string messageContent)
         {   

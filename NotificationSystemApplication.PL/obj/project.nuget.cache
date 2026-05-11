@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "TbIl3c1dsB0=",
+  "dgSpecHash": "JjJY8lCm4sI=",
   "success": true,
   "projectFilePath": "/Users/nandhiraja/Presidio-Internship/gitSpace/genspark-three-tier-architecture-notification-system/NotificationSystemApplication.PL/NotificationSystemApplication.PL.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "/Users/nandhiraja/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/8.0.0/microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512",
+    "/Users/nandhiraja/.nuget/packages/microsoft.extensions.logging.abstractions/8.0.0/microsoft.extensions.logging.abstractions.8.0.0.nupkg.sha512",
+    "/Users/nandhiraja/.nuget/packages/npgsql/8.0.3/npgsql.8.0.3.nupkg.sha512"
+  ],
   "logs": []
 }

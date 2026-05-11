@@ -35,10 +35,10 @@ namespace NotificationSystemApplication.BLL.Services
                 throw new InvalidUserInputException("Unable to add user due to invalid phoneNo, eg PhNo: 1234567890 (10 numbers)");
             }
 
-            User newUser =  new User(id,userName,userEmail,userPhoneNo);
+            User newUser =  new User(userName,userEmail,userPhoneNo);
             
-            _userRepository.AddUser(newUser);
-            return newUser;
+           
+            return  _userRepository.AddUser(newUser);
            
             
            
@@ -60,7 +60,7 @@ namespace NotificationSystemApplication.BLL.Services
             {
                 if (_validateUserphoneNo(PhoneNo))
                 {
-                    user.Email = PhoneNo;
+                    user.PhoneNumber = PhoneNo;
                     return user;
                 }
                 return user;
@@ -89,11 +89,11 @@ namespace NotificationSystemApplication.BLL.Services
             }
 
         }
-        public void UpdateUser(User user)
+        public void UpdateUser(string email ,User user)
         {
             try
             {
-                 _userRepository.UpdateUser(user.Id,user);
+                 _userRepository.UpdateUser(email,user);
             }
             catch(Exception e)
             {

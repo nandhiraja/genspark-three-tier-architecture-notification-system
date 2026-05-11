@@ -62,7 +62,6 @@ namespace NotificationSystemApplication.PL
                     catch(UserNotFoundException unf)
                     {
                         Console.WriteLine(unf.Message);
-                        break;
                     }
   
                 }
@@ -110,6 +109,7 @@ namespace NotificationSystemApplication.PL
         {
             
             Console.WriteLine("\n========================= Edit Your Profile =============================\n");
+            string currEmail = currentUser.Email;
             while(true)
             {
             Console.WriteLine("Please enter what you need to edit:\n    1.Name\n    2.Email\n    3.PhoneNo\n   4.Save & Exit\n");
@@ -164,7 +164,7 @@ namespace NotificationSystemApplication.PL
             else if (editSection =="4")
                 {
                     try{
-                        _userService.UpdateUser(currentUser);
+                        _userService.UpdateUser(currEmail,currentUser);
                         Console.WriteLine("\n============================== Updated,Thank You ==================================\n");
                         currentUser.ToString();
                         return;
