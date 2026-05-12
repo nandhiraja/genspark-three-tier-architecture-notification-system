@@ -61,8 +61,7 @@
   "projectFileDependencyGroups": {
     "net10.0": [
       "NotificationSystemApplication.BLL >= 1.0.0",
-      "NotificationSystemApplication.Core >= 1.0.0",
-      "NotificationSystemApplication.DAL >= 1.0.0"
+      "NotificationSystemApplication.Core >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -95,9 +94,6 @@
             },
             "/Users/nandhiraja/Presidio-Internship/gitSpace/genspark-three-tier-architecture-notification-system/NotificationSystemApplication.Core/NotificationSystemApplication.Core.csproj": {
               "projectPath": "/Users/nandhiraja/Presidio-Internship/gitSpace/genspark-three-tier-architecture-notification-system/NotificationSystemApplication.Core/NotificationSystemApplication.Core.csproj"
-            },
-            "/Users/nandhiraja/Presidio-Internship/gitSpace/genspark-three-tier-architecture-notification-system/NotificationSystemApplication.DAL/NotificationSystemApplication.DAL.csproj": {
-              "projectPath": "/Users/nandhiraja/Presidio-Internship/gitSpace/genspark-three-tier-architecture-notification-system/NotificationSystemApplication.DAL/NotificationSystemApplication.DAL.csproj"
             }
           }
         }
