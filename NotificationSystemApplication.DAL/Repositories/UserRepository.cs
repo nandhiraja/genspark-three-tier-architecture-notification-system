@@ -1,197 +1,131 @@
 using System;
-using System.Collections.Generic;
+using System.Linq;
+using Microsoft.EntityFrameworkCore;
 using NotificationSystemApplication.Core.CustomExceptions;
 using NotificationSystemApplication.Core.Interfaces;
 using NotificationSystemApplication.Core.Models;
-using Npgsql;
+using NotificationSystemApplication.DAL.DBContext; 
 
 namespace NotificationSystemApplication.DAL.Repositories
 {
     public class UserRepository : IUserRepository
     {
-        private readonly string _connectionString;
+        private readonly NotificationDbContext _context;
 
         public UserRepository()
-        {   
-            // local db connection string 
-            _connectionString = "Host=localhost;Port=5432;Database=NotificationAppDB;Username=nandhiraja;Password=;";
+        {
+           
+            _context = new NotificationDbContext();
         }
-
         /// <summary>
-        /// This function used to find the new user 
+        /// This function is used to add new user
         /// </summary>
         /// <param name="user"></param>
-        /// <returns>User</returns>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
         public User AddUser(User user)
-        {   
-            const string insertQuery = "INSERT INTO users (user_name, email, phone_number, create_at) VALUES (@name, @email, @phone, @date);";
-
+        {
             try
-            {   // create a new connection
-                using var connection = new NpgsqlConnection(_connectionString);   // using var to automaticaly close/clear resource at end of this section
-                using var command = new NpgsqlCommand(insertQuery, connection);
-
-                command.Parameters.AddWithValue("@name", user.UserName);
-                command.Parameters.AddWithValue("@email", user.Email);
-                command.Parameters.AddWithValue("@phone", user.PhoneNumber);
-                command.Parameters.AddWithValue("@date", user.CreateAt.ToUniversalTime()); 
-
-                connection.Open();
-                command.ExecuteNonQuery();
+            {
+                _context.Users.Add(user);
+                _context.SaveChanges(); 
+                
+                return user; 
             }
             catch (Exception ex)
             {
                 throw new Exception($"DB Error: Unable to insert user profile. {ex.Message}", ex);
             }
-
-            return FindUserByEmail(user.Email);  // get the newly registered user with id
         }
+
         /// <summary>
-        /// This function used to find the exist user  in db by Email
+        /// It is used to identify the user with registed Email id
         /// </summary>
         /// <param name="email"></param>
         /// <returns>User</returns>
+        /// <exception cref="UserNotFoundException"></exception>
         public User FindUserByEmail(string email)
-        {   
-            const string selectQuery = "SELECT id, user_name, email, phone_number, create_at FROM users WHERE email = @email;";
+        {
+            var user = _context.Users
+                .FirstOrDefault(u => u.Email == email);
 
-            using var connection = new NpgsqlConnection(_connectionString);
-            using var command = new NpgsqlCommand(selectQuery, connection);
-            
-            command.Parameters.AddWithValue("@email", email);
-            connection.Open();
-            
-            using var reader = command.ExecuteReader();
-
-            if (!reader.HasRows)    // check any user has returned 
+            if (user == null)
             {
-               
-                throw new UserNotFoundException($"No user record matched the email address: {email}");  
+                throw new UserNotFoundException($"No user record matched the email address: {email}");
             }
-            //  execute when any user has fetched
-            var user = new User();
-            while (reader.Read()) 
-            {
-              
-                user.Id = reader.GetInt32(0).ToString(); 
-                user.UserName = reader.GetString(1);
-                user.Email = reader.GetString(2);
-                user.PhoneNumber = reader.IsDBNull(3) ? string.Empty : reader.GetString(3);
-                user.CreateAt = reader.GetDateTime(4);
-           
-            } 
+
             return user;
         }
         /// <summary>
-        /// This function used to find the exist user in db by id 
+        /// This function is used to identify the user by user id
         /// </summary>
         /// <param name="id"></param>
         /// <returns>User</returns>
-        public User FindUserById(string id)
+        /// <exception cref="UserNotFoundException"></exception>
+      
+        public User FindUserById(int id)
         {
-            const string selectQuery = "SELECT id, user_name, email, phone_number, create_at FROM users WHERE id = @id;";
+            var user = _context.Users.Find(id);
 
-            if (!int.TryParse(id, out int numericId))
-            {
-                throw new ArgumentException("The provided ID is not a valid numeric identifier.", nameof(id));
-            }
-
-            using var connection = new NpgsqlConnection(_connectionString);
-            using var command = new NpgsqlCommand(selectQuery, connection);
-            
-            command.Parameters.AddWithValue("@id", numericId);
-           
-           
-            connection.Open();
-            
-            using var reader = command.ExecuteReader();
-
-            if (!reader.HasRows)
+            if (user == null)
             {
                 throw new UserNotFoundException($"No user record matched the user ID: {id}");
             }
-
-            var user = new User();
-            while (reader.Read())
-            {
-
-                user.Id = reader.GetInt32(0).ToString();
-                user.UserName = reader.GetString(1);
-                
-                user.Email = reader.GetString(2);
-                user.PhoneNumber = reader.IsDBNull(3) ? string.Empty : reader.GetString(3);
-                user.CreateAt = reader.GetDateTime(4);
-            } 
             return user;
         }
 
-/// <summary>
-/// This function used to update the existing user 
-/// </summary>
-/// <param name="email"></param>
-/// <param name="updatedUser"></param>
-/// <returns>bool</returns>
-        
+        /// <summary>
+        /// This function is used to update the user details [Name,Email,Phone No]
+        /// </summary>
+        /// <param name="email"></param>
+        /// <param name="updatedUser"></param>
+        /// <returns>Bool</returns>
+        /// <exception cref="Exception"></exception>
         public bool UpdateUser(string email, User updatedUser)
-        {   
-            
-            const string updateQuery = "UPDATE users SET user_name = @name, email = @newEmail, phone_number = @phone WHERE email = @oldEmail;";
-
+        {
             try
-            {   
-                using var connection = new NpgsqlConnection(_connectionString);
-               
-                using var command = new NpgsqlCommand(updateQuery, connection);
+            {
+                var existingUser = _context.Users.FirstOrDefault(u => u.Email == email);
+                
+                if (existingUser == null) return false;
 
-                command.Parameters.AddWithValue("@name", updatedUser.UserName);
-                command.Parameters.AddWithValue("@newEmail", updatedUser.Email); 
-                command.Parameters.AddWithValue("@phone", updatedUser.PhoneNumber);
-                command.Parameters.AddWithValue("@oldEmail", email);
+                existingUser.UserName = updatedUser.UserName;
+                existingUser.Email = updatedUser.Email;
+                existingUser.PhoneNumber = updatedUser.PhoneNumber;
 
-                connection.Open();
-                int affectedRows = command.ExecuteNonQuery();
-                 return affectedRows > 0;
+                int affectedRows = _context.SaveChanges();
+                return affectedRows > 0;
             }
             catch (Exception ex)
             {
                 throw new Exception($"DB Error: could not execute update logic {ex.Message}", ex);
             }
         }
-/// <summary>
-/// This function is used to delete the existing user 
-/// </summary>
-/// <param name="email"></param>
-/// <returns>user</returns>
+        /// <summary>
+        /// This function is used to delete the user if found [if used not found return null]
+        /// </summary>
+        /// <param name="email"></param>
+        /// <returns>User or null</returns>
+        /// <exception cref="Exception"></exception>
         public User? DeleteUser(string email)
         {
-            User user;
-            try 
-            {
-                user = FindUserByEmail(email);    // check the user if register or not
-            }
-            catch (UserNotFoundException)
-             {
-                return null; 
-            }
-
-            const string deleteQuery = "DELETE FROM users WHERE email = @email;";
-
             try
-            {   
-                using var connection = new NpgsqlConnection(_connectionString);
-               
-                using var command = new NpgsqlCommand(deleteQuery, connection);
-
-                command.Parameters.AddWithValue("@email", email);
-                connection.Open();
+            {
+                var user = _context.Users.FirstOrDefault(u => u.Email == email);
                 
-                int affectedRows = command.ExecuteNonQuery();
-                 return affectedRows > 0 ? user : null;    // check if user has deleted or not
+                if (user == null) return null;
+
+                _context.Users.Remove(user);
+                _context.SaveChanges(); 
+                
+                return user;
             }
             catch (Exception ex)
             {
-                throw new Exception($"DB Error: Unable to delete for email {email}. {ex.Message}", ex);
+                throw new Exception($"DB Error: Unable to delete for email {email} {ex.Message}", ex);
             }
         }
+
+
     }
 }
