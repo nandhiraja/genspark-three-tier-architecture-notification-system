@@ -54,7 +54,11 @@ TemporaryDependencyNodeTargetIdentifier=net10.0
 /warnaserror+:NU1605,SYSLIB0011
 
 [sourceFiles]
-Class1.cs
+Contexts/NotificationDBContext.cs
+Migrations/
+ 20260514115838_ResetIdOfTables.cs
+ 20260514115838_ResetIdOfTables.Designer.cs
+ NotificationDbContextModelSnapshot.cs
 obj/Debug/net10.0/
  .NETCoreApp,Version=v10.0.AssemblyAttributes.cs
  NotificationSystemApplication.DAL.AssemblyInfo.cs
@@ -234,9 +238,20 @@ Repositories/
  System.Xml.XPath.XDocument.dll
  WindowsBase.dll
 <NUGET>/
- microsoft.extensions.dependencyinjection.abstractions/8.0.0/lib/net8.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll
- microsoft.extensions.logging.abstractions/8.0.0/lib/net8.0/Microsoft.Extensions.Logging.Abstractions.dll
- npgsql/8.0.3/lib/net8.0/Npgsql.dll
+ microsoft.entityframeworkcore.abstractions/9.0.0/lib/net8.0/Microsoft.EntityFrameworkCore.Abstractions.dll
+ microsoft.entityframeworkcore.relational/9.0.0/lib/net8.0/Microsoft.EntityFrameworkCore.Relational.dll
+ microsoft.entityframeworkcore/9.0.0/lib/net8.0/Microsoft.EntityFrameworkCore.dll
+ microsoft.extensions.caching.abstractions/9.0.0/lib/net9.0/Microsoft.Extensions.Caching.Abstractions.dll
+ microsoft.extensions.caching.memory/9.0.0/lib/net9.0/Microsoft.Extensions.Caching.Memory.dll
+ microsoft.extensions.configuration.abstractions/9.0.0/lib/net9.0/Microsoft.Extensions.Configuration.Abstractions.dll
+ microsoft.extensions.dependencyinjection.abstractions/9.0.0/lib/net9.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll
+ microsoft.extensions.dependencyinjection/9.0.0/lib/net9.0/Microsoft.Extensions.DependencyInjection.dll
+ microsoft.extensions.logging.abstractions/9.0.0/lib/net9.0/Microsoft.Extensions.Logging.Abstractions.dll
+ microsoft.extensions.logging/9.0.0/lib/net9.0/Microsoft.Extensions.Logging.dll
+ microsoft.extensions.options/9.0.0/lib/net9.0/Microsoft.Extensions.Options.dll
+ microsoft.extensions.primitives/9.0.0/lib/net9.0/Microsoft.Extensions.Primitives.dll
+ npgsql.entityframeworkcore.postgresql/9.0.0/lib/net8.0/Npgsql.EntityFrameworkCore.PostgreSQL.dll
+ npgsql/9.0.0/lib/net8.0/Npgsql.dll
 
 [analyzerReferences]
 <DOTNET>/packs/Microsoft.NETCore.App.Ref/10.0.7/analyzers/dotnet/cs/
@@ -249,7 +264,13 @@ Repositories/
 <DOTNET>/sdk/10.0.203/Sdks/Microsoft.NET.Sdk/analyzers/
  Microsoft.CodeAnalysis.CSharp.NetAnalyzers.dll
  Microsoft.CodeAnalysis.NetAnalyzers.dll
-<NUGET>/microsoft.extensions.logging.abstractions/8.0.0/analyzers/dotnet/roslyn4.4/cs/Microsoft.Extensions.Logging.Generators.dll
+<NUGET>/microsoft.codeanalysis.analyzers/3.3.4/analyzers/dotnet/cs/
+ Microsoft.CodeAnalysis.Analyzers.dll
+ Microsoft.CodeAnalysis.CSharp.Analyzers.dll
+<NUGET>/
+ microsoft.entityframeworkcore.analyzers/9.0.0/analyzers/dotnet/cs/Microsoft.EntityFrameworkCore.Analyzers.dll
+ microsoft.extensions.logging.abstractions/9.0.0/analyzers/dotnet/roslyn4.4/cs/Microsoft.Extensions.Logging.Generators.dll
+ microsoft.extensions.options/9.0.0/analyzers/dotnet/roslyn4.4/cs/Microsoft.Extensions.Options.SourceGeneration.dll
 
 [analyzerConfigFiles]
 <DOTNET>/sdk/10.0.203/Sdks/Microsoft.NET.Sdk/analyzers/build/config/analysislevel_10_default.globalconfig
