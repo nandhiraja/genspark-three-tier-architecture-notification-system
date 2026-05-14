@@ -7,7 +7,7 @@ namespace NotificationSystemApplication.Core.Interfaces
     {
         public User AddUser(User user);
         public User? FindUserByEmail(string email);
-        public User? FindUserById(string id);
+        public User? FindUserById(int id);
         public bool UpdateUser(string email, User newUpdateUser);
         public User? DeleteUser(string email);
 
