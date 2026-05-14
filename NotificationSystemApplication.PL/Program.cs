@@ -3,6 +3,7 @@ using NotificationSystemApplication.BLL.Senders;
 using NotificationSystemApplication.BLL.Services;
 using NotificationSystemApplication.Core.Models;
 using NotificationSystemApplication.Core.CustomExceptions;
+using System.Linq.Expressions;
 
 namespace NotificationSystemApplication.PL
 {
@@ -286,7 +287,7 @@ namespace NotificationSystemApplication.PL
         private void _handleEditMessage(User currentUser)
         {
             Console.Write("Enter Message ID to edit : ");
-            string editId = Console.ReadLine()??"";
+            if(int.TryParse(Console.ReadLine(),out int editId)){
             Console.Write("Enter new message content: ");
             string newContent = Console.ReadLine()??"";
             
@@ -298,19 +299,30 @@ namespace NotificationSystemApplication.PL
             {
                 Console.WriteLine("Message not found or update failed");
             }
+            }
+            else
+            {
+               Console.WriteLine("Invalid ID Please enter a number"); 
+            }
         }
 
         private void _handleDeleteMessage(User currentUser)
         {
              Console.Write("Enter Message ID to delete : ");
-            string delId = Console.ReadLine()??"";
+            if(int.TryParse(Console.ReadLine(), out int delId)){
             
-            var deletedMsg = _messageService.DeleteMessage(currentUser, delId);
-            if(deletedMsg != null) 
-            {
-                Console.WriteLine($"Message '{deletedMsg.MessageContent}' deleted successfully");
+                var deletedMsg = _messageService.DeleteMessage(currentUser, delId);
+                if(deletedMsg != null) 
+                {
+                    Console.WriteLine($"Message '{deletedMsg.MessageContent}' deleted successfully");
+                }
+                else Console.WriteLine("Message not found");
             }
-            else Console.WriteLine("Message not found");
+            else
+            {
+                Console.WriteLine("Invalid ID Please enter a number");
+            }
+
         }
         static void Main(string[] args)
         {
