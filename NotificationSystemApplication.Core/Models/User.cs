@@ -4,11 +4,13 @@ namespace NotificationSystemApplication.Core.Models
 {
     public class User
     {   
-        public string Id {get; set;}  = string.Empty; 
+        public int Id {get; set;}  
         public string UserName {get;set;} = string.Empty;
         public string Email {get;set;} = string.Empty;
         public string PhoneNumber {get;set;} = string.Empty;
-        public DateTime CreateAt {get;set;}
+        public DateTime CreateAt {get;set;} = DateTime.UtcNow;
+        public virtual ICollection<Message> SentMessages { get; set; } = new List<Message>();
+         public virtual ICollection<Message> ReceivedMessages { get; set; } = new List<Message>();
 
         public User()
         {
