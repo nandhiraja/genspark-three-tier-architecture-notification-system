@@ -49,7 +49,7 @@ namespace NotificationSystemApplication.BLL.Services
 
             foreach (var sender in senders)
             {
-                Message sendMsg = new Message(newMessage.MessageId, newMessage.SenderId, newMessage.ReceiverId, newMessage.MessageContent);
+                Message sendMsg = new Message(newMessage.SenderId, newMessage.ReceiverId, newMessage.MessageContent);
                 
                 if (sender is EmailNotificationSender) 
                 {
@@ -85,7 +85,7 @@ namespace NotificationSystemApplication.BLL.Services
         public Message _SendNewMessage(User sender, User receiver, string userMessage)
         {
             string messageId = _GenerateMessageId();
-            Message newMessage = new Message(messageId,sender.Id,receiver.Id,userMessage);
+            Message newMessage = new Message(sender.Id,receiver.Id,userMessage);
             return newMessage;
         }
 

@@ -14,7 +14,7 @@ namespace NotificationSystemApplication.BLL.Services
         }
 
         // Edits existing message
-        public bool EditMessage(User currentUser, string messageId, string newContent)
+        public bool EditMessage(User currentUser, int messageId, string newContent)
         {
             var messages = _messageRepository.GetUserMessages(currentUser);
             foreach(var msg in messages)
@@ -32,7 +32,7 @@ namespace NotificationSystemApplication.BLL.Services
         }
 
         // Deletes an existing message
-        public Message? DeleteMessage(User currentUser, string messageId)
+        public Message? DeleteMessage(User currentUser, int messageId)
         {
             var messages = _messageRepository.GetUserMessages(currentUser);
             foreach(var msg in messages)
